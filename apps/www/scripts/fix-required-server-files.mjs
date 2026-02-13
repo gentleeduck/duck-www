@@ -45,7 +45,7 @@ const main = async () => {
     await fs.writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8')
 
     console.log(
-      `[fix-required-server-files] Updated ${manifestPath}: cleared relativeAppDir to avoid duplicated project path resolution in Vercel build.`
+      `[fix-required-server-files] Updated ${manifestPath}: cleared relativeAppDir to avoid duplicated project path resolution in Vercel build.`,
     )
   } catch (error) {
     if (error && typeof error === 'object' && 'code' in error && error.code === 'ENOENT') {
