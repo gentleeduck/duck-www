@@ -68,7 +68,7 @@
     "dev": "next dev",
     "dev:docs": "bunx velite dev",
     "lint": "next lint",
-    "postbuild": "bunx next-sitemap",
+    "postbuild": "next-sitemap && node scripts/fix-required-server-files.mjs",
     "check-types": "tsc -p tsconfig.json --noEmit --pretty false --skipLibCheck",
     "start": "next start",
     "preview": "bunx @cloudflare/next-on-pages",
