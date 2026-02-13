@@ -1,11 +1,11 @@
 {
   "$schema": "https://zpgqhogoevbgpxustvmo.supabase.co/storage/v1/object/public/json/duck-template-schema.json",
   "args": {
-    "name": "duck-gen"
+    "name": "duck-www"
   },
   "description": "Wise decisions, powered by types.",
   "ignore": ["node_modules", "dist"],
-  "name": "duck-gen",
+  "name": "duck-www",
   "outdir": "./duck-template-dir",
   "variants": [
     {
