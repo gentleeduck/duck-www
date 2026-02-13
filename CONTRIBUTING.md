@@ -1,144 +1,96 @@
-# Contributing to @duck-gen
+# Contributing to @duck-www
 
-First off, thank you for considering contributing to **Gentleduck**!
-We welcome all kinds of contributions — from bug reports and documentation improvements to feature requests and new packages.
-
-This document provides guidelines to help you get started.
-
----
+Thank you for contributing to GentleDuck.
 
 ## Code of Conduct
 
 By participating in this project, you agree to uphold our [Code of Conduct](./CODE_OF_CONDUCT.md).
-Please treat everyone with respect and kindness.
 
----
+## Getting Started
 
-## 🛠 Getting Started
-
-### 1. Fork & Clone
+### 1. Fork and clone
 
 ```bash
-git clone https://github.com/gentleeduck/duck-gen.git
-cd duck-gen
+git clone https://github.com/gentleeduck/duck-ui.git
+cd duck-ui
 ```
 
-### 2. Install Dependencies
-
-We use **Bun** with workspaces:
+### 2. Install dependencies
 
 ```bash
 bun install
 ```
 
-### 3. Build All Packages
+### 3. Run local development
 
 ```bash
-bun run build
+bun --filter @gentleduck/www dev:docs
+bun --filter @gentleduck/www dev
 ```
 
-### 4. Run in Development
+### 4. Build locally
 
 ```bash
-bun run dev
+bun --filter @gentleduck/www build
 ```
 
-This will spin up local development environments for the packages and docs.
+## Repository Structure
 
----
+- `apps/www`: website and docs app
+- `tooling/*`: shared configs for linting, typing, testing, and build tooling
 
-## Working with Packages
+## Workflow
 
-* All code lives under the `packages/` directory.
-* Each package has its own `package.json` and may depend on other internal packages.
-* Use [Turborepo](https://turbo.build/) commands to build, test, and lint efficiently.
+1. Create a branch from `main`:
 
----
+```bash
+git checkout -b feat/your-change
+```
 
-## Development Workflow
+2. Follow project standards:
+- TypeScript first
+- Keep changes focused and testable
+- Run lint and checks before pushing
 
-1. **Branching**
+3. Use clear commit messages (Conventional Commits preferred):
 
-   * Create a new branch from `main`.
-   * Use a descriptive name, e.g. `fix/button-hover`, `feat/new-dialog`, `docs/readme-update`.
+```text
+feat: add homepage section
+fix: correct sitemap domain
+docs: update setup guide
+```
 
-   ```bash
-   git checkout -b feat/new-component
-   ```
+4. Run checks:
 
-2. **Coding Standards**
+```bash
+bun run lint
+bun run check-types
+bun --filter @gentleduck/www build
+```
 
-   * Use **TypeScript**.
-   * Follow existing **Biome** rules.
-   * Write clear, self-documenting code.
-
-3. **Commit Messages**
-   Follow [Conventional Commits](https://www.conventionalcommits.org/):
-   Also make sure that you pass the `Husky` checks.
-
-   ```
-   feat: add new dropdown menu component
-   fix: resolve button focus issue in Safari
-   docs: update contributing guide
-   ```
-
-4. **Testing**
-
-   * Write unit tests for new functionality.
-   * Run all tests before pushing:
-
-     ```bash
-     bun run test
-     ```
-
----
-
-## Submitting a Pull Request
+## Pull Requests
 
 1. Push your branch:
 
-   ```bash
-   git push origin feat/new-component
-   ```
+```bash
+git push origin feat/your-change
+```
 
-2. Open a Pull Request (PR) against the `main` branch.
-
-3. Fill out the PR template with:
-
-   * A clear description of your changes
-   * Any related issues (`Closes #123`)
-   * Screenshots or code samples (if UI related)
-
----
+2. Open a PR to `main` with:
+- a clear summary
+- related issue links (if any)
+- screenshots for UI changes
 
 ## Reporting Issues
 
-If you find a bug, please [open an issue](https://github.com/gentleeduck/duck-gen/issues) with:
+Open issues here: https://github.com/gentleeduck/duck-ui/issues
 
-* Steps to reproduce
-* Expected behavior
-* Actual behavior
-* Screenshots (if applicable)
-
----
-
-## Ways to Contribute
-
-* **Code**: Bug fixes, features, optimizations
-* **Docs**: Tutorials, guides, API references
-* **Design**: Improving UX, accessibility, component design
-* **Community**: Helping others in discussions, writing blog posts, or sharing Gentleduck
-
----
-
-## Tips
-
-* Start small - even fixing a typo helps!
-* Look at the ["good first issue"](https://github.com/gentleeduck/duck-gen/labels/good%20first%20issue) label for beginner-friendly contributions.
-* Ask questions! We’re happy to guide you.
-
----
+Please include:
+- reproduction steps
+- expected behavior
+- actual behavior
+- logs or screenshots
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the project’s [MIT License](./LICENSE).
+By contributing, you agree that contributions are licensed under the [MIT License](./LICENSE).

@@ -1,46 +1,49 @@
 <p align="center">
-  <img src="./apps/duck-gen-docs/public/og/root.png" alt="Duck Gen Logo" width="800"/>
+  <img src="./apps/www/public/og/root.png" alt="GentleDuck WWW" width="800"/>
 </p>
 
-# @duck-gen
+# @gentleduck/www Monorepo
 
-`@duck-gen` is the GentleDuck monorepo for Duck Gen, Duck Query, and related developer tooling.
-Published package scope remains `@gentleduck/*`.
- 
-## Documentation
-- Website: https://gen.gentleduck.org
-- GitHub: https://github.com/gentleeduck/duck-gen
+`@duck-www` is the GentleDuck monorepo for the public website and docs platform.
+
+## Website
+- Production: https://gentleduck.org
+- GitHub: https://github.com/gentleeduck/duck-ui
 
 ## What's in the repo
 ### App
-- `apps/duck-gen-docs` – Duck Gen docs site
+- `apps/www` - Next.js website and docs experience for GentleDuck.
 
-### Packages
-- `packages/duck-gen` – `@gentleduck/gen` type-safe API/message generator
-- `packages/duck-query` – `@gentleduck/query` type-safe Axios client
-- `packages/duck-ttest` – `@gentleduck/ttest` type-level testing utilities
-- `packages/duck-skitch` – internal package
-- `packages/sandbox-server` – internal sandbox server
-
-### Published packages
-- `@gentleduck/gen` – type-safe API and message generator (NestJS-tested)
-- `@gentleduck/query` – type-safe Axios client
-- `@gentleduck/ttest` – compile-time type testing utilities
+### Tooling
+- `tooling/biome` - shared Biome config
+- `tooling/tailwind` - shared Tailwind config
+- `tooling/typescript` - shared TypeScript config
+- `tooling/tsdown` - shared tsdown config
+- `tooling/vitest` - shared Vitest config
+- `tooling/github` - shared GitHub config package
 
 ## Getting Started
 ```bash
-git clone https://github.com/gentleeduck/duck-gen.git
-cd duck-gen
+git clone https://github.com/gentleeduck/duck-ui.git
+cd duck-ui
 bun install
 ```
 
-## Run docs locally
+## Run locally
 ```bash
-bun run --filter @gentleduck/gen-docs dev
+bun --filter @gentleduck/www dev:docs
+bun --filter @gentleduck/www dev
+```
+
+## Build and Deploy
+```bash
+bun --filter @gentleduck/www build
+bun --filter @gentleduck/www preview
+bun --filter @gentleduck/www deploy
 ```
 
 ## Contributing
-We welcome contributions. Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md).
+Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md).
 
 ## License
-MIT. See [`LICENSE`](./LICENSE) for more information.
+MIT. See [`LICENSE`](./LICENSE) for details.
