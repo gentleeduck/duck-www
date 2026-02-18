@@ -70,6 +70,6 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@gentleduck/docs": "^0.0.12"
+    "@gentleduck/docs": "^0.0.13"
   }
 }
