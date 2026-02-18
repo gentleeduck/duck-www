@@ -8,7 +8,7 @@
 
 ## Website
 - Production: https://gentleduck.org
-- GitHub: https://github.com/gentleeduck/duck-ui
+- GitHub: https://github.com/gentleeduck/duck-www
 
 ## What's in the repo
 ### App
@@ -24,8 +24,8 @@
 
 ## Getting Started
 ```bash
-git clone https://github.com/gentleeduck/duck-ui.git
-cd duck-ui
+git clone https://github.com/gentleeduck/duck-www.git
+cd duck-www
 bun install
 ```
 

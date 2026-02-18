@@ -11,8 +11,8 @@ By participating in this project, you agree to uphold our [Code of Conduct](./CO
 ### 1. Fork and clone
 
 ```bash
-git clone https://github.com/gentleeduck/duck-ui.git
-cd duck-ui
+git clone https://github.com/gentleeduck/duck-www.git
+cd duck-www
 ```
 
 ### 2. Install dependencies
@@ -83,7 +83,7 @@ git push origin feat/your-change
 
 ## Reporting Issues
 
-Open issues here: https://github.com/gentleeduck/duck-ui/issues
+Open issues here: https://github.com/gentleeduck/duck-www/issues
 
 Please include:
 - reproduction steps
