@@ -26,7 +26,7 @@ export const companyCard: MenuCard = {
   className: 'from-zinc-950 via-sky-950/50 to-sky-800/70 border-sky-500/40',
   description: 'Open source, transparent roadmap, and community support.',
   external: true,
-  href: 'https://github.com/gentleeduck/duck-ui',
+  href: 'https://github.com/gentleeduck/duck-www',
   icon: Building2,
   label: 'Company',
   title: 'Built in public',
@@ -134,7 +134,7 @@ export const companyItems = (github: string, twitter?: string): MenuItem[] => [
   {
     description: 'Roadmap ideas and community support.',
     external: true,
-    href: 'https://github.com/gentleeduck/duck-ui/discussions',
+    href: 'https://github.com/gentleeduck/duck-www/discussions',
     title: 'Discussions',
   },
   {
