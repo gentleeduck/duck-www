@@ -1,0 +1,154 @@
+---
+title: accordion
+description: A vertically stacked set of interactive headings that each reveal a section of content.
+component: true
+---
+
+<ComponentPreview
+  name="accordion-1"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+  description="An accordion with three items"
+/>
+
+## Philosophy
+
+Accordions solve the progressive disclosure problem — show the outline, hide the details until requested. We use a compound component pattern (Accordion -> AccordionItem -> AccordionTrigger + AccordionContent) because each piece needs independent control while sharing open/close state. The `type="single"` vs `type="multiple"` distinction maps directly to whether sections are mutually exclusive.
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @gentleduck/cli add accordion
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @gentleduck/primitives @gentleduck/libs lucide-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource path="packages/registry-ui/src/accordion" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
+```
+
+```tsx
+<Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview
+  name="accordion-2"
+  description="default accordion"
+/>
+
+### ChevronDown Icon
+
+<ComponentPreview
+  name="accordion-3"
+  description="accordion with chevron icon"
+/>
+
+### multiple
+
+<ComponentPreview
+  name="accordion-4"
+  description="accordion multiple"
+/>
+
+## Component Composition
+
+<MermaidDiagram chart={`graph TD
+    A[Accordion] --> B[AccordionItem]
+    B --> C[AccordionTrigger]
+    B --> D[AccordionContent]
+`} />
+
+## API Reference
+
+### Accordion
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `type` | `'single' \| 'multiple'` | `'single'` | Defines accordion behavior. `'single'` allows only one open item; `'multiple'` allows multiple open items |
+| `defaultValue` | `string \| string[]` | -- | Sets initial open state(s); string for single type, array for multiple |
+| `value` | `string \| string[]` | -- | Controlled open state(s); requires `onValueChange` for updates |
+| `onValueChange` | `(value: string \| string[]) => void` | -- | Callback fired when open state changes |
+| `collapsible` | `boolean` | `true` | Allows collapsing the currently open item by clicking again (single type only) |
+| `rerender` | `boolean` | `false` | Forces internal re-render on each toggle, enabling conditional remount with `renderOnce` |
+| `className` | `string` | -- | Additional CSS classes applied to the root div |
+| `children` | `React.ReactNode` | -- | AccordionItem elements to render inside the accordion |
+| `...props` | `React.HTMLProps<HTMLDivElement>` | -- | Additional props to spread to the content div |
+
+### AccordionItem Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | (required) | Unique identifier tying trigger to content |
+| `renderOnce` | `boolean` | `false` | Mounts content only on first expand and preserves it |
+| `children` | `[trigger: ReactNode, content: ReactNode]` | (required) | Two nodes: first the `AccordionTrigger`, second the `AccordionContent` |
+| `className` | `string` | -- | Additional CSS classes applied to the details element |
+| `...props` | `React.HTMLProps<HTMLDetailsElement>` | -- | Additional props to spread to the details element |
+
+### AccordionTrigger Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | -- | Identifier matching parent item's `value` |
+| `icon` | `React.ReactNode` | -- | Custom icon component; defaults to a rotating ChevronDown |
+| `className` | `string` | -- | Additional CSS classes applied to the summary element |
+| `children` | `React.ReactNode` | -- | Content rendered as the trigger label |
+| `...props` | `React.HTMLProps<HTMLElement>` | -- | Additional props to spread to the summary element |
+
+### AccordionContent Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `rerender` | `boolean` | `false` | Controls remount behavior based on parent context |
+| `className` | `string` | -- | Additional CSS classes applied to the content div |
+| `children` | `React.ReactNode` | -- | Content to reveal when the accordion item is expanded |
+| `...props` | `React.HTMLProps<HTMLDivElement>` | -- | Additional props to spread to the content div |
+
+## RTL Support
+
+Direction is resolved through the shared primitives direction module. Use a local `dir="rtl"` override when the component exposes it, or set `DirectionProvider` at app/root level for global RTL/LTR behavior.
+
+<ComponentPreview
+  name="accordion-5"
+  description="An accordion with RTL support."
+/>

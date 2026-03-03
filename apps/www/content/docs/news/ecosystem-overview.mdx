@@ -19,7 +19,7 @@ GentleDuck is not a single library. It is an ecosystem of focused packages that 
         Vim["@gentleduck/vim\nKeyboard navigation"]
     end
     subgraph UI["UI Layer"]
-        Registry["@gentleduck/registry-ui-duckui\n59+ production components"]
+        Registry["@gentleduck/registry-ui\n59+ production components"]
     end
     subgraph Tooling["Tooling Layer"]
         CLI["@gentleduck/cli\nComponent scaffolding"]
@@ -119,7 +119,7 @@ Includes primitives for:
 - **Slider** -- Range input with full keyboard support
 - **Navigation Menu** -- Accessible menu navigation patterns
 
-Every component in the `registry-ui-duckui` package is built on these primitives. If you want to build your own design system, start here.
+Every component in the `registry-ui` package is built on these primitives. If you want to build your own design system, start here.
 
 ### @gentleduck/motion
 
@@ -141,7 +141,7 @@ The power of the ecosystem is in composition. Here is how a single component -- 
     A["@gentleduck/libs\ncn() for class merging"] --> D["Button Component"]
     B["@gentleduck/variants\ncva() for variant styles"] --> D
     C["@gentleduck/primitives\nSlot for polymorphism"] --> D
-    D --> E["Exported from\nregistry-ui-duckui"]
+    D --> E["Exported from\nregistry-ui"]
     E --> F["Installed via\n@gentleduck/cli"]
     style D fill:#e8ffe8,stroke:#333
     style F fill:#fff8e8,stroke:#333`} />
