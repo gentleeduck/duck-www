@@ -1,3 +1,6 @@
-import { docsVeliteConfig } from '@gentleduck/docs/velite'
+import { createDocsVeliteConfig } from '@gentleduck/docs/velite'
+import { rehypeComponent } from './velite-configs'
 
-export default docsVeliteConfig
+export default createDocsVeliteConfig({
+  rehypePluginsBefore: [rehypeComponent],
+})

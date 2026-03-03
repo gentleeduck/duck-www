@@ -10,6 +10,7 @@ import {
   Package,
   Puzzle,
   Server,
+  ShieldCheck,
   Sparkles,
   Table,
   Terminal,
@@ -26,6 +27,14 @@ export const packages = [
     href: 'https://ui.gentleduck.org',
     icon: LayoutGrid,
     name: 'Gentleduck UI',
+    status: 'new',
+  },
+  {
+    description:
+      'Type-safe RBAC + ABAC authorization engine for TypeScript with framework integrations and composable policy design.',
+    href: 'https://github.com/gentleeduck/duck-iam',
+    icon: ShieldCheck,
+    name: 'Gentleduck IAM',
     status: 'new',
   },
   {
@@ -102,6 +111,14 @@ export const packages = [
     href: `${uiDocsBaseUrl}/docs/packages/duck-cli`,
     icon: Terminal,
     name: 'Gentleduck UI CLI',
+    status: 'new',
+  },
+  {
+    description:
+      'Rust-powered scaffolding templates for apps and libraries with reusable conventions and starter blueprints.',
+    href: `${uiDocsBaseUrl}/docs/packages/duck-template`,
+    icon: Package,
+    name: 'Gentleduck Template',
     status: 'new',
   },
   {
