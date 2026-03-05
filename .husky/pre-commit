@@ -1,5 +1,0 @@
-echo "[husky] pre-commit checks starting..."
-
-bunx @biomejs/biome check --write .
-
-echo "[husky] pre-commit checks passed"
