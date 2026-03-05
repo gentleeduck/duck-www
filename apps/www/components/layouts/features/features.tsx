@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@gentleduck/registry-ui-duckui/button'
-import { Card, CardTitle } from '@gentleduck/registry-ui-duckui/card'
+import { Button } from '@gentleduck/registry-ui/button'
+import { Card, CardTitle } from '@gentleduck/registry-ui/card'
 import { Layers } from 'lucide-react'
 import Link from 'next/link'
 import { features } from './features.constants'

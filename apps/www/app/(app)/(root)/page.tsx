@@ -1,11 +1,11 @@
-import { PageActions, PageHeader, PageHeaderDescription } from '@gentleduck/docs/client'
-import { DuckLazyComponent } from '@gentleduck/lazy/lazy-component'
-import { Button } from '@gentleduck/registry-ui-duckui/button'
+import { PageActions, PageHeader, PageHeaderDescription, PageHeaderHeading } from '@gentleduck/docs/client'
+import { Button } from '@gentleduck/registry-ui/button'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Announcement } from '~/components/announcement'
-import { EcosystemSection } from '~/components/layouts/core-packages'
 import { FeaturesSection } from '~/components/layouts/features'
+import { EcosystemSection } from '~/components/layouts/core-packages'
+import { PartnersSection } from '~/components/layouts/partners'
 import { siteConfig } from '~/config/site'
 
 const title = siteConfig.title
@@ -45,35 +45,22 @@ export default function Page() {
           aria-hidden="true"
           className="absolute bottom-16 left-0 z-0 h-36 w-36 rounded-full bg-primary/20 blur-3xl"></div>
         <Announcement />
-        <div className="relative">
-          <h1 className="inline-block max-w-6xl font-bold leading-none tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            <div className="relative mb-3 text-center text-4xl sm:text-5xl md:mb-5 md:text-6xl">
-              <span className="inline-block">GENTLEDUCK STACK FOR</span>
-            </div>
-            <div className="mt-1 block text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className="-rotate-3 relative inline-block bg-primary px-4 py-1 text-primary-foreground">
-                PRODUCTION
-              </span>
-              <span className="ml-2 inline-block text-foreground uppercase">TEAMS</span>
-            </div>
-          </h1>
-        </div>
+        <PageHeaderHeading>{title}</PageHeaderHeading>
         <PageHeaderDescription>{description}</PageHeaderDescription>
         <PageActions className="mx-auto w-full justify-center">
-          <Button>
+          <Button asChild>
             <Link href="/docs">Get Started</Link>
           </Button>
-          <Button variant="outline">
-            <Link href="/docs/whoiam">Who is behind?</Link>
+          <Button asChild variant="ghost">
+            <Link href="/docs/news">What is new?</Link>
           </Button>
         </PageActions>
       </PageHeader>
       <div className="container-wrapper">
         <div>
           <FeaturesSection />
-          <DuckLazyComponent options={{ rootMargin: '-50px 0px 0px 0px', threshold: 0 }}>
-            <EcosystemSection />
-          </DuckLazyComponent>
+          <EcosystemSection />
+          <PartnersSection />
         </div>
       </div>
     </>

@@ -11,7 +11,7 @@ import {
   useSiteConfig,
 } from '@gentleduck/docs/client'
 import { cn } from '@gentleduck/libs/cn'
-import { buttonVariants } from '@gentleduck/registry-ui-duckui/button'
+import { buttonVariants } from '@gentleduck/registry-ui/button'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -19,7 +19,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@gentleduck/registry-ui-duckui/navigation-menu'
+} from '@gentleduck/registry-ui/navigation-menu'
 import { Github, TerminalSquare, Twitter } from 'lucide-react'
 import Link from 'next/link'
 import type { ComponentType } from 'react'

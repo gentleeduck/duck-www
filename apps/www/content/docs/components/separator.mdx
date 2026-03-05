@@ -1,0 +1,79 @@
+---
+title: separator
+description: Visually or semantically separates content.
+component: true
+---
+
+<ComponentPreview name="separator-1" description="A separator component." />
+
+## Philosophy
+
+Visual hierarchy needs breathing room. The Separator creates semantic and visual boundaries between content sections. We expose `orientation` as the only meaningful prop because a divider's job is to divide — its value comes from where you place it, not how you configure it.
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx @gentleduck/cli add separator
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @gentleduck/libs
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource path="packages/registry-ui/src/separator" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { Separator } from "@/components/ui/separator"
+```
+
+```tsx
+<Separator />
+```
+
+## API Reference
+
+### Separator
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `orientation` | `'horizontal' \| 'vertical'` | `'horizontal'` | Controls the orientation of the separator line |
+| `className` | `string` | -- | Additional CSS class names |
+| `...props` | `React.HTMLProps<HTMLHRElement>` | -- | Additional props to spread to the hr element |
+
+## RTL Support
+
+Direction is resolved through the shared primitives direction module. Use a local `dir="rtl"` override when the component exposes it, or set `DirectionProvider` at app/root level for global RTL/LTR behavior.
+
+<ComponentPreview
+  name="separator-2"
+  description="A separator with RTL support."
+/>
+

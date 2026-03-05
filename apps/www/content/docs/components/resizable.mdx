@@ -1,0 +1,202 @@
+---
+title: resizable
+description: Accessible resizable panel groups and layouts with keyboard support.
+component: true
+links:
+  doc: https://github.com/bvaughn/react-resizable-panels
+  api: https://github.com/bvaughn/react-resizable-panels/tree/main/packages/react-resizable-panels
+---
+
+<ComponentPreview
+  name="resizable-1"
+  description="A group of resizable horizontal and vertical panels."
+/>
+
+## About
+
+The `Resizable` component is built on top of
+[`react-resizable-panels`](https://github.com/bvaughn/react-resizable-panels) by [`bvaughn`](https://github.com/bvaughn).
+
+## Philosophy
+
+Resizable panels let users allocate screen real estate to match their workflow. We wrap react-resizable-panels because the math of proportional resizing, minimum sizes, and persistent layouts is deceptively complex. The PanelGroup/Panel/Handle model keeps the API simple while supporting arbitrarily complex layouts.
+
+## How It's Built
+
+<MermaidDiagram chart={`graph TD
+  Resizable[Resizable]
+  Resizable --> rrp["react-resizable-panels"]:::external
+  Resizable --> libs["@gentleduck/libs"]:::internal
+  Resizable --> lucide["lucide-react"]:::external
+
+  rrp --> |"provides"| ProportionalResize["Proportional Resizing"]
+  rrp --> |"provides"| MinMax["Min/Max Constraints"]
+  rrp --> |"provides"| Persist["Layout Persistence"]
+  Resizable --> |"adds"| HandleStyle["Styled Drag Handle"]
+  Resizable --> |"adds"| Styling["Tailwind Styling"]
+
+  classDef external fill:#818cf8,stroke:#6366f1,color:#fff
+  classDef internal fill:#2dd4bf,stroke:#14b8a6,color:#fff
+`} />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx @gentleduck/cli add resizable
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-resizable-panels @gentleduck/libs
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource path="packages/registry-ui/src/resizable" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable"
+```
+
+```tsx showLineNumbers
+<ResizablePanelGroup direction="horizontal">
+  <ResizablePanel>One</ResizablePanel>
+  <ResizableHandle />
+  <ResizablePanel>Two</ResizablePanel>
+</ResizablePanelGroup>
+```
+
+## Examples
+
+### Vertical
+
+Use the `direction` prop to set the direction of the resizable panels.
+
+<ComponentPreview
+  name="resizable-2"
+  description="A group of resizable vertical panels."
+/>
+
+```tsx showLineNumbers {9}
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable"
+
+export default function Example() {
+  return (
+    <ResizablePanelGroup direction="vertical">
+      <ResizablePanel>One</ResizablePanel>
+      <ResizableHandle />
+      <ResizablePanel>Two</ResizablePanel>
+    </ResizablePanelGroup>
+  )
+}
+```
+
+### Handle
+
+You can set or hide the handle by using the `withHandle` prop on the `ResizableHandle` component.
+
+<ComponentPreview
+  name="resizable-3"
+  description="A group of resizable panels with a handle."
+/>
+
+```tsx showLineNumbers {11}
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable"
+
+export default function Example() {
+  return (
+    <ResizablePanelGroup direction="horizontal">
+      <ResizablePanel>One</ResizablePanel>
+      <ResizableHandle withHandle />
+      <ResizablePanel>Two</ResizablePanel>
+    </ResizablePanelGroup>
+  )
+}
+```
+
+## Component Composition
+
+<MermaidDiagram chart={`graph TD
+    A[ResizablePanelGroup] --> B[ResizablePanel]
+    A --> C[ResizableHandle]
+    A --> D[ResizablePanel]
+`} />
+
+## API Reference
+
+### ResizablePanelGroup
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `direction` | `"horizontal" \| "vertical"` | (required) | Layout direction of the panels |
+| `className` | `string` | `--` | Additional CSS classes for the panel group |
+| `children` | `React.ReactNode` | `--` | `ResizablePanel` and `ResizableHandle` elements |
+| `...props` | `React.ComponentPropsWithoutRef<typeof PanelGroup>` | -- | Additional props inherited from `PanelGroup`. |
+
+### ResizablePanel
+
+Re-exports `Panel` from `react-resizable-panels` directly.
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `defaultSize` | `number` | `--` | Default size of the panel as a percentage (0-100) |
+| `minSize` | `number` | `--` | Minimum size of the panel as a percentage |
+| `maxSize` | `number` | `--` | Maximum size of the panel as a percentage |
+| `collapsible` | `boolean` | `false` | Whether the panel can be collapsed |
+| `className` | `string` | `--` | Additional CSS classes for the panel |
+| `children` | `React.ReactNode` | `--` | Panel content |
+| `...props` | `React.ComponentPropsWithoutRef<typeof Panel>` | -- | Additional props inherited from `Panel`. |
+
+### ResizableHandle
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `withHandle` | `boolean` | `--` | Whether to render the visible grip icon handle |
+| `className` | `string` | `--` | Additional CSS classes for the resize handle |
+| `...props` | `React.ComponentPropsWithoutRef<typeof PanelResizeHandle>` | -- | Additional props inherited from `PanelResizeHandle`. |
+
+## RTL Support
+
+Direction is resolved through the shared primitives direction module. Use a local `dir="rtl"` override when the component exposes it, or set `DirectionProvider` at app/root level for global RTL/LTR behavior.
+
+<ComponentPreview
+  name="resizable-4"
+  description="A resizable panel with RTL support."
+/>

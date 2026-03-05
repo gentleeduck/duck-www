@@ -1,60 +1,133 @@
 ---
-title: GentleDuck
-description: Why GentleDuck exists, what we build, and how the ecosystem fits together.
+title: introduction
+description: A versatile and feature-rich UI component library built for modern web applications.
 ---
 
-GentleDuck is an open source organization building production-grade developer tooling. We exist to reduce friction across the entire development lifecycle, from UI and interaction design to documentation, automation, testing, and systems performance.
+## What is @gentleduck/ui?
 
-Our goal is simple: make it easier for teams to build, evolve, and maintain software at scale without sacrificing correctness, performance, or consistency.
+Look, we're not going to waste your time with flowery marketing speak. @gentleduck/ui is a UI 
+component library that actually works. It's part of the [@gentleduck](https://github.com/gentleeduck) 
+ecosystem a collection of open-source tools built by developers who are tired of fighting their 
+frameworks instead of building great products.
 
-## Why GentleDuck
+We're here to solve real problems: components that don't break when you look at them wrong, 
+documentation that doesn't assume you have a PhD in computer science, and a maintainer who 
+actually responds to issues. Wild concept, right?
 
-Modern teams ship fast, but tooling often fragments as systems grow. GentleDuck focuses on creating tools that work well together, share conventions, and stay reliable in real production environments.
+## The Human Behind the Duck
 
-We build developer tooling that helps teams move quickly while remaining predictable, maintainable, and scalable over time.
+[@wildduck2](https://github.com/wildduck2) is the architect behind [@gentleduck](https://github.com/gentleeduck).
+He's not interested in building another abandoned open-source graveyard. He's obsessed with 
+creating tools that developers actually want to use performant, maintainable, and battle-tested in 
+production environments.
 
-## Our principles
+He's also criminally responsive to community feedback. Got a bug? It gets fixed. Got a feature 
+request that makes sense? It gets seriously considered. No corporate bureaucracy, no waiting three 
+quarters for a minor patch. Just direct, honest development.
 
-- **Clarity over complexity**  
-  Simple, predictable APIs backed by clear documentation and strong conventions.
+The entire [@gentleduck](https://github.com/gentleeduck) organization exists because modern web 
+development shouldn't feel like assembling IKEA furniture in the dark. Every library, every tool, 
+every decision is made with one question: "Does this actually help developers ship better products 
+faster?"
 
-- **Consistency at scale**  
-  Shared UI foundations, registries, templates, and tooling that keep teams aligned as products and teams grow.
+## Why @gentleduck/ui Doesn't Suck
 
-- **Performance you can trust**  
-  Production-ready tooling designed for real workloads, with performance and reliability treated as first-class concerns.
+Most UI libraries fall into two camps: gorgeous but impossible to customize, or flexible but uglier 
+than a frontend developer's first CSS file. @gentleduck/ui refuses to pick a side.
 
-- **Composable tools**  
-  Each library stands on its own, but follows shared patterns that make the ecosystem stronger when used together.
+**What you actually get:**
 
-## What we build
+- **Themes that bend to your will**: Light mode, dark mode, chaos mode customize everything without 
+fighting specificity wars or using `!important` like a caveman.
 
-GentleDuck is an ecosystem of focused libraries and tools that can be adopted independently or combined as a unified platform.
+- **Responsive by default**: Your components work on a 4K monitor and a potato phone. No media query 
+gymnastics required.
 
-- **UI and interaction foundations**  
-  **duck-ui**, primitives, motion, hooks, and variants provide consistent, accessible building blocks for modern interfaces.
+- **Accessibility baked in**: ARIA labels, keyboard navigation, screen reader support all there from 
+day one because shipping inaccessible products in 2026 is embarrassing.
 
-- **Compiler and code generation tooling**  
-  Tools like **duck-gen** generate type-safe APIs, routes, message tags, and integrations, reducing boilerplate and enforcing contracts.
+- **Performance that matters**: These components are optimized to load fast and stay fast. We've 
+done the bundle size optimization so you don't have to explain to your manager why your app loads 
+like it's 2010.
 
-- **CLI and automation**  
-  Command-line tooling for installing packages, generating code, syncing registries, and standardizing workflows across projects.
+- **Actually extensible**: Want to modify a component? Go ahead. We won't lock you into our way of 
+doing things. Build your own components using our primitives. Fork what you need. We trust 
+you're not an idiot.
 
-- **Testing, data, and state libraries**  
-  Utilities for type-level testing, data querying, state management, and reliability that help teams ship safely with confidence.
+- **APIs that make sense**: We've designed our component APIs to match patterns from popular 
+libraries you already know. Migrating from other UI frameworks? You'll feel right at home. 
+No need to relearn everything or fight muscle memory.
 
-- **Systems and performance tools**  
-  High-performance utilities such as **TTLog**, benchmarking tools, and Linux helpers focused on observability, debugging, and runtime efficiency.
+## Contributing (Yes, Actually)
 
-## How the ecosystem fits together
+We want your contributions. Bug reports, feature requests, code, documentation improvements, 
+hot takes on component naming bring it all to our [GitHub repository](https://github.com/gentleeduck/duck-ui).
 
-The ecosystem is designed to be modular. You can adopt a single package to solve a specific problem, or lean into shared conventions across UI, tooling, and systems as your product grows.
+Unlike projects run by committees, we move fast. Good ideas get implemented. Bad ideas get 
+respectfully declined with actual reasoning. Contributions get reviewed by humans who remember 
+what it's like to be on the other side of a pull request.
 
-UI primitives power components, variants standardize APIs, compiler tooling enforces contracts, the CLI keeps installs consistent, and systems tools support performance and observability in production.
+The [@gentleduck](https://github.com/gentleeduck) community is built on mutual respect and the 
+shared understanding that we're all just trying to build cool stuff without losing our minds.
 
-## Where to start
+## Getting Started (The Fast Version)
 
-If you are new to GentleDuck, start with the ecosystem or products sections to explore individual packages. Choose the tool that solves your biggest pain point first, then expand gradually as your needs grow.
+### Install
 
-GentleDuck rewards incremental adoption while providing a clear path toward a cohesive, production-ready tooling stack.
+```bash
+npx @gentleduck/cli init
+```
 
+### Add Components
+
+```bash
+npx @gentleduck/cli add button
+```
+
+### Use Them
+
+```jsx
+import { Button } from '@/components/ui/button'
+
+<Button>Actually works on first try</Button>
+```
+
+That's it. No webpack configuration hell, no mysterious peer dependency conflicts, no sacrificing a
+rubber duck to the JavaScript gods.
+
+## The Origin Story
+
+This started as [@wildduck2](https://github.com/wildduck2)'s side project one of those "I'm tired 
+of this nonsense, I'll build it myself" moments that every developer has at 2 AM. But instead of 
+collecting digital dust, it evolved into something people actually wanted to use.
+
+Was it inspired by other UI libraries, [Radix UI](https://www.radix-ui.com/), 
+[Float UI](https://floating-ui.com/), and others? Absolutely. Great artists steal, and great 
+developers learn from what works. But @gentleduck/ui isn't just another clone it's built from the 
+ground up with its own primitives, utilities, and ecosystem.
+
+We're standing on the shoulders of giants while building something genuinely different. If you're 
+looking for another clone, this isn't it. If you're looking for the fastest, most complete 
+component library maintained by someone who gives a damn, welcome home.
+
+## The Ecosystem (Or: How Deep This Rabbit Hole Goes)
+
+Here's where things get interesting. @gentleduck/ui isn't just a component library it's the 
+centerpiece of an entire ecosystem built from the ground up for one purpose: being the absolute 
+best UI library you'll ever use.
+
+We're talking custom primitives, performance utilities, development tools, and yes rewrites of 
+popular libraries that weren't fast enough or flexible enough for what we needed. When existing 
+solutions didn't meet our standards, we didn't compromise. We rebuilt them. Better. Faster. More 
+aligned with modern web development.
+
+This isn't duct tape and wishful thinking. This is a cohesive, intentionally designed system where 
+every piece works together seamlessly. The CLI, the primitives, the utilities, the components 
+they're all part of a larger vision to give you the most powerful, performant UI development 
+experience possible.
+
+Other libraries give you components. We give you an unfair advantage.
+
+---
+
+**Built with spite, caffeine, and an unreasonable commitment to developer experience.**
