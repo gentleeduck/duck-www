@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <>
+    <div className="overflow-hidden">
       <div className="container-wrapper">
         <PageHeader className="relative isolate flex flex-col justify-start justify-self-center text-center">
           <div
@@ -71,6 +71,6 @@ export default function Page() {
           <SponsorsSection />
         </div>
       </div>
-    </>
+    </div>
   )
 }
