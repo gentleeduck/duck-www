@@ -175,6 +175,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `
               (function() {
                 try {
+                  var storedTheme = localStorage.getItem('theme');
+                  var theme = storedTheme;
+
+                  if (theme !== 'light' && theme !== 'dark') {
+                    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  }
+
+                  var root = document.documentElement;
+                  root.classList.remove('light', 'dark');
+                  root.classList.add(theme);
+                  root.style.colorScheme = theme;
+                  root.style.backgroundColor = theme === 'dark' ? '#020817' : '#ffffff';
+                } catch (_) {}
+              })();
+            `,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
                   var presetKey = 'fontPresetV6';
                   var presetMigrationKey = 'fontPresetV6WWWMigrated';
                   var defaultPreset = 'mono-normal';
