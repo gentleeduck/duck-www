@@ -67,7 +67,9 @@ const PostLayout = async ({ params }: { params: Promise<{ slug?: string[] }> }) 
           <DocsPagerTop doc={doc} />
         </div>
         <div className="space-y-3 border-border border-b pb-6">
-          <h1 className={cn('scroll-m-20 font-bold text-3xl tracking-tight md:text-4xl')}>{doc.title.split('-').join(' ')}</h1>
+          <h1 className={cn('scroll-m-20 font-bold text-3xl tracking-tight md:text-4xl')}>
+            {doc.title.split('-').join(' ')}
+          </h1>
           {doc.description && <p className="text-base text-muted-foreground">{doc.description}</p>}
         </div>
         {doc.links ? (

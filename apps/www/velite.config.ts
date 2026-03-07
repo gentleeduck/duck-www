@@ -1,4 +1,3 @@
 import { createDocsVeliteConfig } from '@gentleduck/docs/velite'
 
-export default createDocsVeliteConfig({
-})
+export default createDocsVeliteConfig({})

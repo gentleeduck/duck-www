@@ -119,7 +119,6 @@
         "noBannedTypes": "off"
       },
       "nursery": {
-        "noImportCycles": "off",
         "useSortedClasses": {
           "fix": "safe",
           "level": "info",
