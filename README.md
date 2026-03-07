@@ -42,22 +42,6 @@ bun --filter @gentleduck/www preview
 bun --filter @gentleduck/www deploy
 ```
 
-## Cloudflare Deployment
-- Runtime: OpenNext for Cloudflare (`@opennextjs/cloudflare` + Wrangler).
-- Worker config: `apps/www/wrangler.jsonc`.
-- OpenNext config: `apps/www/open-next.config.ts`.
-
-### Required GitHub Secrets
-- `CLOUDFLARE_API_TOKEN`: API token with Workers deployment permissions.
-- `CLOUDFLARE_ACCOUNT_ID`: target Cloudflare account ID.
-
-```bash
-bun run --cwd apps/www preview
-bun run --cwd apps/www deploy
-```
-
-CI/CD deploys to Cloudflare from `.github/workflows/main.yml` on pushes to `main` or `master`.
-
 ## Contributing
 Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md).
 

@@ -36,7 +36,6 @@
   },
   "devDependencies": {
     "@gentleduck/typescript-config": "workspace:*",
-    "@opennextjs/cloudflare": "^1.17.1",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/lodash.template": "^4.5.3",
     "@types/node": "22.19.3",
@@ -45,8 +44,7 @@
     "jotai": "^2.18.0",
     "tailwindcss": "4.1.18",
     "typescript": "5.9.3",
-    "velite": "^0.3.1",
-    "wrangler": "^4.71.0"
+    "velite": "^0.3.1"
   },
   "name": "@gentleduck/www",
   "author": "GentleDuck (https://www.gentleduck.org)",
@@ -73,9 +71,9 @@
     "postbuild": "next-sitemap && node scripts/fix-required-server-files.mjs",
     "check-types": "tsc -p tsconfig.json --noEmit --pretty false --skipLibCheck",
     "start": "next start",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "build:prod": "opennextjs-cloudflare build",
-    "deploy": "bun run build:prod && opennextjs-cloudflare deploy"
+    "preview": "next build && next start",
+    "build:prod": "next build",
+    "deploy": "bun run build:prod"
   },
   "version": "0.1.22",
   "overrides": {
