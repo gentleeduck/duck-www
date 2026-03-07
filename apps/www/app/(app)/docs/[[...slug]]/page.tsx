@@ -61,18 +61,14 @@ const PostLayout = async ({ params }: { params: Promise<{ slug?: string[] }> }) 
   }
 
   return (
-    <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
-      <div className="mx-auto w-full min-w-0 max-w-2xl" style={{ contain: 'paint' }}>
-        <div className="space-y-2">
-          <div className="absolute top-0 right-0 flex items-center gap-2">
-            <DocsPagerTop doc={doc} />
-          </div>
-          <div className="space-y-2">
-            <h1 className={cn('scroll-m-20 font-bold text-3xl capitalize tracking-tight')}>
-              {doc.title.split('-').join(' ')}
-            </h1>
-            {doc.description && <p className="text-base text-muted-foreground">{doc.description}</p>}
-          </div>
+    <main className="relative py-2 md:py-4 xl:grid xl:grid-cols-[minmax(0,1fr)_280px] xl:gap-8">
+      <div className="mx-auto w-full min-w-0 max-w-3xl">
+        <div className="mb-4 flex items-center justify-end">
+          <DocsPagerTop doc={doc} />
+        </div>
+        <div className="space-y-3 border-border border-b pb-6">
+          <h1 className={cn('scroll-m-20 font-bold text-3xl tracking-tight md:text-4xl')}>{doc.title.split('-').join(' ')}</h1>
+          {doc.description && <p className="text-base text-muted-foreground">{doc.description}</p>}
         </div>
         {doc.links ? (
           <div className="flex items-center space-x-2 pt-4">
@@ -104,13 +100,13 @@ const PostLayout = async ({ params }: { params: Promise<{ slug?: string[] }> }) 
         <DocsPagerBottom doc={doc} />
       </div>
       {doc.toc && (
-        <div className="hidden text-sm xl:block">
-          <div className="-mt-10 sticky top-16 pt-4">
-            <div className="show-scroll-hover -mt-10 sticky top-16 h-[calc(100vh-3.5rem)] overflow-y-auto py-12 pb-10">
+        <aside className="hidden text-sm xl:block">
+          <div className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-2">
+            <div className="show-scroll-hover py-2">
               <DashboardTableOfContents toc={doc.toc} />
             </div>
           </div>
-        </div>
+        </aside>
       )}
     </main>
   )

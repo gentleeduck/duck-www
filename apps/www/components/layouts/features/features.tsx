@@ -56,7 +56,7 @@ function FeatureCard({ feature }: { feature: FeatureItem }) {
 
 export function FeaturesSection() {
   return (
-    <section aria-labelledby="features-heading" className="relative" id="features">
+    <section aria-labelledby="features-heading" className="relative isolate overflow-x-clip" id="features">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-32 -left-20 z-0 h-[12rem] w-[12rem] rounded-full bg-gradient-to-br from-emerald-500/12 to-teal-400/8 blur-[90px] md:h-[18rem] md:w-[18rem]"></div>

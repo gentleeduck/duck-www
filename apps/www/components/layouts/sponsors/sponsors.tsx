@@ -39,13 +39,16 @@ function SponsorCell({ sponsor }: { sponsor: Sponsor }) {
 
 export function SponsorsSection() {
   return (
-    <section aria-labelledby="sponsors-heading" className="relative" id="sponsors">
+    <section aria-labelledby="sponsors-heading" className="relative isolate overflow-x-clip" id="sponsors">
       <div
         aria-hidden="true"
-        className="absolute top-1/3 left-1/3 z-0 h-56 w-56 rounded-full bg-pink-500/20 blur-3xl"></div>
+        className="pointer-events-none absolute -top-28 -left-16 z-0 h-[10rem] w-[10rem] rounded-full bg-gradient-to-br from-pink-500/10 to-rose-400/6 blur-[80px] md:h-[16rem] md:w-[16rem]"></div>
       <div
         aria-hidden="true"
-        className="absolute right-1/4 bottom-1/4 z-0 h-48 w-48 rounded-full bg-orange-500/15 blur-3xl"></div>
+        className="pointer-events-none absolute -right-16 -bottom-28 z-0 h-[9rem] w-[9rem] rounded-full bg-gradient-to-tl from-orange-400/8 to-amber-400/5 blur-[90px] md:h-[14rem] md:w-[14rem]"></div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-36 right-1/4 z-0 h-[7rem] w-[7rem] rounded-full bg-gradient-to-b from-fuchsia-400/5 to-purple-400/3 blur-[80px] md:h-[12rem] md:w-[12rem]"></div>
 
       <div className="container relative mx-auto py-24 sm:py-32">
         <SectionTitle subtitle="The people and organizations that keep this project alive." title="Partners" />
@@ -61,11 +64,14 @@ export function SponsorsSection() {
 
         <div className="mt-10 text-center">
           <Link
-            className="inline-flex items-center gap-2 rounded-lg border border-border/50 px-5 py-2.5 text-muted-foreground text-sm transition-colors hover:border-primary/30 hover:text-foreground"
+            className="group/support inline-flex items-center gap-2 rounded-lg border border-border/50 px-5 py-2.5 text-muted-foreground text-sm transition-colors hover:border-red-500/70 hover:text-foreground"
             href={process.env.NEXT_PUBLIC_SPONSOR_URL ?? 'https://opencollective.com/gentelduck'}
             rel="noreferrer"
             target="_blank">
-            <Heart aria-hidden="true" className="size-4" />
+            <Heart
+              aria-hidden="true"
+              className="size-4 fill-transparent stroke-current transition-all duration-300 ease-out group-hover/support:animate-[heart-pop_420ms_cubic-bezier(0.22,1,0.36,1)_both] group-hover/support:fill-red-500/75 group-hover/support:stroke-red-400 group-hover/support:text-red-400"
+            />
             Become a Sponsor
           </Link>
         </div>

@@ -1,7 +1,5 @@
 import { ImageResponse } from 'next/og'
 
-export const runtime = 'edge'
-
 const decodeBase64ToArrayBuffer = (base64: string): ArrayBuffer => {
   const binary = atob(base64)
   const bytes = new Uint8Array(binary.length)

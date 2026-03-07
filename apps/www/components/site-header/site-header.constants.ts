@@ -99,6 +99,23 @@ export const productItems: MenuItem[] = [
     href: `${uiDocsBaseUrl}/docs/packages/duck-template`,
     title: '@gentleduck/template',
   },
+  {
+    description: 'Enter/exit animations and mount/unmount transitions.',
+    external: true,
+    href: `${uiDocsBaseUrl}/docs/packages/duck-motion`,
+    title: '@gentleduck/motion',
+  },
+  {
+    description: 'Type-safe HTTP client built on generated API route maps.',
+    external: true,
+    href: `${genDocsBaseUrl}/docs/duck-query`,
+    title: '@gentleduck/query',
+  },
+  {
+    description: 'Documentation components and velite config for docs sites.',
+    href: '/docs',
+    title: '@gentleduck/docs',
+  },
 ]
 
 export const documentationItems: MenuItem[] = [
