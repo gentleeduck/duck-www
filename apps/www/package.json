@@ -4,7 +4,7 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
-    "@gentleduck/docs": "^0.1.1",
+    "@gentleduck/docs": "^0.2.1",
     "@gentleduck/lazy": "^1.2.12",
     "@gentleduck/libs": "^0.1.14",
     "@gentleduck/motion": "^0.1.16",
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@gentleduck/typescript-config": "workspace:*",
+    "@opennextjs/cloudflare": "^1.17.1",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/lodash.template": "^4.5.3",
     "@types/node": "22.19.3",
@@ -44,7 +45,8 @@
     "jotai": "^2.18.0",
     "tailwindcss": "4.1.18",
     "typescript": "5.9.3",
-    "velite": "^0.3.1"
+    "velite": "^0.3.1",
+    "wrangler": "^4.71.0"
   },
   "name": "@gentleduck/www",
   "author": "GentleDuck (https://www.gentleduck.org)",
@@ -64,15 +66,16 @@
   },
   "scripts": {
     "build": "next build",
-    "build:docs": "bunx velite",
+    "build:docs": "bun velite",
     "dev": "next dev",
-    "dev:docs": "bunx velite dev",
+    "dev:docs": "bun velite dev",
     "lint": "next lint",
     "postbuild": "next-sitemap && node scripts/fix-required-server-files.mjs",
     "check-types": "tsc -p tsconfig.json --noEmit --pretty false --skipLibCheck",
     "start": "next start",
-    "preview": "bunx vercel deploy",
-    "deploy": "bunx vercel deploy --prod"
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "build:prod": "opennextjs-cloudflare build",
+    "deploy": "bun run build:prod && opennextjs-cloudflare deploy"
   },
   "version": "0.1.22",
   "overrides": {
