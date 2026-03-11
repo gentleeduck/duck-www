@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "@gentleduck/docs": "^0.2.3",
+    "@modelcontextprotocol/sdk": "^1.27.1",
     "@gentleduck/lazy": "^1.2.12",
     "@gentleduck/libs": "catalog:",
     "@gentleduck/motion": "catalog:",
