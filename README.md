@@ -1,9 +1,13 @@
-# duck-www
+<p align="center">
+  <img src="./apps/www/public/og/www-home-67.png" alt="gentleduck.org homepage snapshot (67%)" width="800"/>
+</p>
 
-The main website and monorepo for the gentleduck organization — UI components, docs, and related tooling.
+# gentleduck/www
+
+A Bun-based monorepo for the gentleduck.org website, docs, UI components, and related tooling.
 
 ## Documentation
-- Docs app: `apps/www`
+- Website: https://gentleduck.org
 - GitHub: https://github.com/gentleeduck/duck-www
 
 ## Workspace Matrix
@@ -12,13 +16,13 @@ The main website and monorepo for the gentleduck organization — UI components,
 
 | Path | Package | Role | Status |
 | --- | --- | --- | --- |
-| `apps/www` | `@gentleduck/docs` | Public docs site | Active |
+| `apps/www` | `@gentleduck/www` | Public docs site, component playground, ecosystem hub | Active |
 
 ### Packages
 
 | Path | Package | Role | Status |
 | --- | --- | --- | --- |
-| `packages/ui` | `@gentleduck/ui` | UI component library | Active |
+| `packages/ui` | `@gentleduck/ui` | Production-ready React UI components built on Gentleduck primitives | Active |
 
 ### Tooling Packages
 
@@ -32,16 +36,24 @@ The main website and monorepo for the gentleduck organization — UI components,
 | `tooling/vitest` | `@gentleduck/vitest-config` | Shared Vitest config | Internal |
 | `tooling/bash` | `bash` | Shell utilities and misc scripts | Internal |
 
+## Workspace Policy
+
+- Root quality scripts target the active workspace graph only.
+- All packages are private and internal to this monorepo.
+
 ## Getting Started
+
+> Requires **Node >= 22** and **Bun >= 1.3**.
+
 ```bash
 git clone https://github.com/gentleeduck/duck-www.git
 cd duck-www
 bun install
 ```
 
-## Run a Single App
+## Run the Website
 ```bash
-bun --filter @gentleduck/docs dev
+bun --filter @gentleduck/www dev
 ```
 
 ## Common Workspace Commands
@@ -51,6 +63,7 @@ bun run build        # build all packages/apps
 bun run test         # run tests across workspaces
 bun run check        # biome checks
 bun run check-types  # TypeScript type checks
+bun run ci           # non-mutating repo verification (check, workspace lint, types, tests, build)
 ```
 
 ## Contributing
