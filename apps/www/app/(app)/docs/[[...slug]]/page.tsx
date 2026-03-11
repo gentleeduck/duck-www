@@ -1,11 +1,10 @@
 import { DashboardTableOfContents, DocsPagerBottom, DocsPagerTop, Mdx } from '@gentleduck/docs/client'
 import { cn } from '@gentleduck/libs/cn'
-import { badgeVariants } from '@gentleduck/registry-ui/badge'
+import { badgeVariants } from '@gentleduck/ui/badge'
 import { ExternalLinkIcon } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import React from 'react'
 import { SLUG_METADATA } from '~/config/metadata'
 import { docs } from '../../../../.velite'
 

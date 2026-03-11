@@ -11,7 +11,7 @@ import {
   useSiteConfig,
 } from '@gentleduck/docs/client'
 import { cn } from '@gentleduck/libs/cn'
-import { buttonVariants } from '@gentleduck/registry-ui/button'
+import { buttonVariants } from '@gentleduck/ui/button'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -19,18 +19,11 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@gentleduck/registry-ui/navigation-menu'
-import { Github, TerminalSquare, Twitter } from 'lucide-react'
+} from '@gentleduck/ui/navigation-menu'
+import { Github, Twitter } from 'lucide-react'
 import Link from 'next/link'
 import type { ComponentType } from 'react'
-import {
-  companyCard,
-  companyItems,
-  documentationCard,
-  documentationItems,
-  productCard,
-  productItems,
-} from './site-header.constants'
+import { companyCard, companyItems, productCard, productItems } from './site-header.constants'
 import type { MenuCard, MenuItem } from './site-header.types'
 
 export function SiteHeader() {
@@ -38,16 +31,16 @@ export function SiteHeader() {
   const github = siteConfig.links?.github ?? 'https://github.com/gentleeduck'
 
   return (
-    <HeaderRoot className="border-b border-border/40 bg-background/60 backdrop-blur-md supports-backdrop-filter:bg-background/40">
+    <HeaderRoot className="border-border/40 border-b bg-background/60 backdrop-blur-md supports-backdrop-filter:bg-background/40">
       <HeaderContainer className="justify-between gap-4">
         <div className="flex items-center gap-8">
-          <HeaderBrand className="shrink-0 hidden md:flex" />
+          <HeaderBrand className="hidden shrink-0 md:flex" />
           <MobileNav />
 
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm bg-transparent">Products</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent text-sm">Products</NavigationMenuTrigger>
                 <MenuPanel card={productCard} items={productItems} />
               </NavigationMenuItem>
               {/* <NavigationMenuItem> */}
@@ -55,7 +48,7 @@ export function SiteHeader() {
               {/*   <MenuPanel card={documentationCard} items={documentationItems} /> */}
               {/* </NavigationMenuItem> */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm bg-transparent">Company</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent text-sm">Company</NavigationMenuTrigger>
                 <MenuPanel card={companyCard} items={companyItems(github, siteConfig.links?.twitter)} />
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -164,8 +157,8 @@ function CardContent({
         <Icon className="size-5 text-white" />
       </div>
       <div className="relative space-y-2">
-        <p className="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-white/70">{label}</p>
-        <p className="text-base font-semibold leading-tight">{title}</p>
+        <p className="font-semibold text-[0.65rem] text-white/70 uppercase tracking-[0.28em]">{label}</p>
+        <p className="font-semibold text-base leading-tight">{title}</p>
         <p className="text-sm text-white/75">{description}</p>
       </div>
     </>
@@ -181,7 +174,7 @@ function MenuListItem({ description, external, href, title }: MenuItem) {
       <li>
         <NavigationMenuLink className={className} href={href} rel="noreferrer" target="_blank">
           <span className="font-medium">{title}</span>
-          <span className="text-xs text-muted-foreground group-hover:text-accent-foreground/80">{description}</span>
+          <span className="text-muted-foreground text-xs group-hover:text-accent-foreground/80">{description}</span>
         </NavigationMenuLink>
       </li>
     )
@@ -192,7 +185,7 @@ function MenuListItem({ description, external, href, title }: MenuItem) {
       <NavigationMenuLink asChild>
         <Link className={className} href={href}>
           <span className="font-medium">{title}</span>
-          <span className="text-xs text-muted-foreground group-hover:text-accent-foreground/80">{description}</span>
+          <span className="text-muted-foreground text-xs group-hover:text-accent-foreground/80">{description}</span>
         </Link>
       </NavigationMenuLink>
     </li>

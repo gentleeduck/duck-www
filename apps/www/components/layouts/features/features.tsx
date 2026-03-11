@@ -1,11 +1,9 @@
 'use client'
 
-import { Button } from '@gentleduck/registry-ui/button'
-import { Card, CardTitle } from '@gentleduck/registry-ui/card'
-import { Layers } from 'lucide-react'
+import { Card, CardTitle } from '@gentleduck/ui/card'
 import Link from 'next/link'
 import { features } from './features.constants'
-import { FeatureItem } from './features.types'
+import type { FeatureItem } from './features.types'
 
 export function SectionTitle({ title, subtitle }: { title: string; subtitle: string }) {
   return (
