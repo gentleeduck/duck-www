@@ -1,5 +1,5 @@
 import { BookOpen, Boxes, Building2 } from 'lucide-react'
-import { MenuCard, MenuItem } from './site-header.types'
+import type { MenuCard, MenuItem } from './site-header.types'
 
 const uiDocsBaseUrl = 'https://ui.gentleduck.org'
 const genDocsBaseUrl = 'https://gen.gentleduck.org'

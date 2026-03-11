@@ -1,5 +1,5 @@
 import { Code2, Layers, LayoutGrid, Rocket, Sparkles, Terminal } from 'lucide-react'
-import { FeatureItem } from './features.types'
+import type { FeatureItem } from './features.types'
 
 export const features: FeatureItem[] = [
   {
