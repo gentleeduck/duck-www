@@ -1,13 +1,14 @@
 export const siteConfig = {
-  description: 'Gentleduck builds fast, reliable, open source developer tooling for production use.',
+  description:
+    'Open source UI components, design systems, developer tooling, and Linux utilities. Production-ready React primitives, CLI tools, logging, and full-stack utilities built by Gentleduck.',
   links: {
     email: 'support@gentleduck.org',
-    github: 'https://github.com/gentleeduck',
+    github: 'https://github.com/gentleeduck/duck-www',
     twitter: 'https://x.com/wild_ducka',
   },
-  name: 'GentleDuck',
+  name: 'Gentleduck',
   ogImage: 'https://gentleduck.org/og/root.png',
-  title: 'Gentleduck · Open source developer tooling',
+  title: 'Gentleduck - Open source UI components, developer tools, and Linux utilities',
   url: 'https://gentleduck.org',
 }
 
