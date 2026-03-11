@@ -1,7 +1,7 @@
 {
   "name": "Gentleduck - design systems and developer tooling",
   "short_name": "Gentleduck",
-  "description": "Gentleduck builds modern UI components and developer tools - duck-ui, TTLog, duck-template, and duck-linux-utils - plus docs and compiler workflows for reliable product delivery.",
+  "description": "Open source UI components, design systems, developer tooling, and Linux utilities. Production-ready React primitives, CLI tools, logging, and full-stack utilities built by Gentleduck.",
   "start_url": "/",
   "orientation": "any",
   "categories": [

@@ -1,12 +1,12 @@
 # Support
 
-Thanks for using GentleDuck.
+Thanks for using **duck-www**.
 
 If you need help:
 
-- Check docs: https://gentleduck.org
-- Join discussions: https://github.com/gentleeduck/duck-www/discussions
-- Report bugs: https://github.com/gentleeduck/duck-www/issues/new?template=bug_report.md
-- Request features: https://github.com/gentleeduck/duck-www/issues/new?template=feature_request.md
+- Check our docs: [gentleduck.org](https://gentleduck.org)
+- Join discussions: [GitHub Discussions](https://github.com/gentleeduck/duck-www/discussions)
+- Found a bug? [Open a Bug Report](https://github.com/gentleeduck/duck-www/issues/new?template=bug_report.md)
+- Have an idea? [Submit a Feature Request](https://github.com/gentleeduck/duck-www/issues/new?template=feature_request.md)
 
-Please do not use GitHub Issues for general support requests.
+Please **don't use GitHub Issues for support requests** — use Discussions or Chat instead.

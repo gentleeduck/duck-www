@@ -61,7 +61,7 @@ import { type PieSectorDataItem } from 'recharts'
 
 ## Documentation Overhaul
 
-A comprehensive rewrite covering every component and package page in duck-ui.
+A comprehensive rewrite covering every component and package page in duck-www.
 
 <MermaidDiagram chart={`flowchart TD
     A["57 Component Pages"] --> B["API Reference Tables"]
@@ -120,15 +120,15 @@ Built on top of `alert-dialog`, `button`, `popover`, `react-hook-form`, and `she
 
 ## Layout Cleanup
 
-Cleaned up layout files across all three apps (duck-ui-docs, duck-gen-docs, www):
+Cleaned up layout files across all three apps (www, duck-gen-docs, www):
 
 | Fix | Scope |
 | --- | --- |
 | Removed unnecessary `'use client'` from `(app)/layout.tsx` | All 3 apps |
 | Fixed invalid `aria-hidden="undefined"` and `@ts-ignore` | All 3 docs sidebar layouts |
 | Wired up www velite docs (was `[] as any`) | www |
-| Removed dead `ColorsNav` in hidden div | duck-ui-docs colors layout |
-| Fixed duplicate `id="themes"` | duck-ui-docs themes layout |
+| Removed dead `ColorsNav` in hidden div | www colors layout |
+| Fixed duplicate `id="themes"` | www themes layout |
 
 ---
 

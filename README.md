@@ -1,26 +1,36 @@
-<p align="center">
-  <img src="./apps/www/public/og/root.png" alt="GentleDuck WWW" width="800"/>
-</p>
+# duck-www
 
-# @gentleduck/www Monorepo
+The main website and monorepo for the gentleduck organization — UI components, docs, and related tooling.
 
-`@duck-www` is the GentleDuck monorepo for the public website and docs platform.
-
-## Website
-- Production: https://gentleduck.org
+## Documentation
+- Docs app: `apps/www`
 - GitHub: https://github.com/gentleeduck/duck-www
 
-## What's in the repo
-### App
-- `apps/www` - Next.js website and docs experience for GentleDuck.
+## Workspace Matrix
 
-### Tooling
-- `tooling/biome` - shared Biome config
-- `tooling/tailwind` - shared Tailwind config
-- `tooling/typescript` - shared TypeScript config
-- `tooling/tsdown` - shared tsdown config
-- `tooling/vitest` - shared Vitest config
-- `tooling/github` - shared GitHub config package
+### Apps
+
+| Path | Package | Role | Status |
+| --- | --- | --- | --- |
+| `apps/www` | `@gentleduck/docs` | Public docs site | Active |
+
+### Packages
+
+| Path | Package | Role | Status |
+| --- | --- | --- | --- |
+| `packages/ui` | `@gentleduck/ui` | UI component library | Active |
+
+### Tooling Packages
+
+| Path | Package | Role | Status |
+| --- | --- | --- | --- |
+| `tooling/biome` | `@gentleduck/biome-config` | Shared Biome config | Internal |
+| `tooling/github` | `@gentleduck/github` | GitHub/project automation support | Internal |
+| `tooling/tailwind` | `@gentleduck/tailwind-config` | Shared Tailwind config | Internal |
+| `tooling/tsdown` | `@gentleduck/tsdown-config` | Shared `tsdown` config | Internal |
+| `tooling/typescript` | `@gentleduck/typescript-config` | Shared TypeScript config | Internal |
+| `tooling/vitest` | `@gentleduck/vitest-config` | Shared Vitest config | Internal |
+| `tooling/bash` | `bash` | Shell utilities and misc scripts | Internal |
 
 ## Getting Started
 ```bash
@@ -29,21 +39,22 @@ cd duck-www
 bun install
 ```
 
-## Run locally
+## Run a Single App
 ```bash
-bun --filter @gentleduck/www dev:docs
-bun --filter @gentleduck/www dev
+bun --filter @gentleduck/docs dev
 ```
 
-## Build and Deploy
+## Common Workspace Commands
 ```bash
-bun --filter @gentleduck/www build
-bun --filter @gentleduck/www preview
-bun --filter @gentleduck/www deploy
+bun run dev          # run all workspace dev tasks
+bun run build        # build all packages/apps
+bun run test         # run tests across workspaces
+bun run check        # biome checks
+bun run check-types  # TypeScript type checks
 ```
 
 ## Contributing
-Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md).
+We welcome contributions. Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md).
 
 ## License
-MIT. See [`LICENSE`](./LICENSE) for details.
+MIT. See [`LICENSE`](./LICENSE) for more information.

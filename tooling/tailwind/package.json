@@ -1,17 +1,17 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "engines": {
-    "bun": ">=1.3.5"
+    "node": ">=22.0.0"
   },
   "exports": {
     "./base": "./base.css",
     "./docs": "./docs.css",
     "./web": "./web.css"
   },
-  "author": "GentleDuck (https://www.gentleduck.org)",
+  "author": "@gentleduck contributors",
   "license": "MIT",
   "name": "@gentleduck/tailwind-config",
-  "homepage": "https://github.com/gentleeduck/duck-www/tree/main/tooling/tailwind#readme",
+  "homepage": "https://github.com/gentleeduck/duck-www/tree/master/tooling/tailwind#readme",
   "bugs": {
     "url": "https://github.com/gentleeduck/duck-www/issues"
   },

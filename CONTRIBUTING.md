@@ -1,96 +1,144 @@
-# Contributing to @duck-www
+# Contributing to duck-www
 
-Thank you for contributing to GentleDuck.
+First off, thank you for considering contributing to **duck-www**!
+We welcome all kinds of contributions — from bug reports and documentation improvements to feature requests and new packages.
+
+This document provides guidelines to help you get started.
+
+---
 
 ## Code of Conduct
 
 By participating in this project, you agree to uphold our [Code of Conduct](./CODE_OF_CONDUCT.md).
+Please treat everyone with respect and kindness.
+
+---
 
 ## Getting Started
 
-### 1. Fork and clone
+### 1. Fork & Clone
 
 ```bash
 git clone https://github.com/gentleeduck/duck-www.git
 cd duck-www
 ```
 
-### 2. Install dependencies
+### 2. Install Dependencies
+
+We use **Bun** with workspaces:
 
 ```bash
 bun install
 ```
 
-### 3. Run local development
+### 3. Build All Packages
 
 ```bash
-bun --filter @gentleduck/www dev:docs
-bun --filter @gentleduck/www dev
+bun run build
 ```
 
-### 4. Build locally
+### 4. Run in Development
 
 ```bash
-bun --filter @gentleduck/www build
+bun run dev
 ```
 
-## Repository Structure
+This will spin up local development environments for the packages and docs.
 
-- `apps/www`: website and docs app
-- `tooling/*`: shared configs for linting, typing, testing, and build tooling
+---
 
-## Workflow
+## Working with Packages
 
-1. Create a branch from `main`:
+* All code lives under the `packages/` directory.
+* Each package has its own `package.json` and may depend on other internal packages.
+* Use [Turborepo](https://turbo.build/) commands to build, test, and lint efficiently.
 
-```bash
-git checkout -b feat/your-change
-```
+---
 
-2. Follow project standards:
-- TypeScript first
-- Keep changes focused and testable
-- Run lint and checks before pushing
+## Development Workflow
 
-3. Use clear commit messages (Conventional Commits preferred):
+1. **Branching**
 
-```text
-feat: add homepage section
-fix: correct sitemap domain
-docs: update setup guide
-```
+   * Create a new branch from `master`.
+   * Use a descriptive name, e.g. `fix/button-hover`, `feat/new-dialog`, `docs/readme-update`.
 
-4. Run checks:
+   ```bash
+   git checkout -b feat/new-component
+   ```
 
-```bash
-bun run lint
-bun run check-types
-bun --filter @gentleduck/www build
-```
+2. **Coding Standards**
 
-## Pull Requests
+   * Use **TypeScript**.
+   * Follow existing **Biome** rules.
+   * Write clear, self-documenting code.
+
+3. **Commit Messages**
+   Follow [Conventional Commits](https://www.conventionalcommits.org/):
+   Also make sure that you pass the `Husky` checks.
+
+   ```
+   feat: add new dropdown menu component
+   fix: resolve button focus issue in Safari
+   docs: update contributing guide
+   ```
+
+4. **Testing**
+
+   * Write unit tests for new functionality.
+   * Run all tests before pushing:
+
+     ```bash
+     bun run test
+     ```
+
+---
+
+## Submitting a Pull Request
 
 1. Push your branch:
 
-```bash
-git push origin feat/your-change
-```
+   ```bash
+   git push origin feat/new-component
+   ```
 
-2. Open a PR to `main` with:
-- a clear summary
-- related issue links (if any)
-- screenshots for UI changes
+2. Open a Pull Request (PR) against the `master` branch.
+
+3. Fill out the PR template with:
+
+   * A clear description of your changes
+   * Any related issues (`Closes #123`)
+   * Screenshots or code samples (if UI related)
+
+---
 
 ## Reporting Issues
 
-Open issues here: https://github.com/gentleeduck/duck-www/issues
+If you find a bug, please [open an issue](https://github.com/gentleeduck/duck-www/issues) with:
 
-Please include:
-- reproduction steps
-- expected behavior
-- actual behavior
-- logs or screenshots
+* Steps to reproduce
+* Expected behavior
+* Actual behavior
+* Screenshots (if applicable)
+
+---
+
+## Ways to Contribute
+
+* **Code**: Bug fixes, features, optimizations
+* **Docs**: Tutorials, guides, API references
+* **Design**: Improving UX, accessibility, component design
+* **Community**: Helping others in discussions, writing blog posts, or sharing duck-www
+
+---
+
+## Tips
+
+* Start small - even fixing a typo helps!
+* Look at the ["good first issue"](https://github.com/gentleeduck/duck-www/labels/good%20first%20issue) label for beginner-friendly contributions.
+* Ask questions! We're happy to guide you.
+
+---
 
 ## License
 
-By contributing, you agree that contributions are licensed under the [MIT License](./LICENSE).
+By contributing, you agree that your contributions will be licensed under the project's [MIT License](./LICENSE).
