@@ -27,7 +27,7 @@
     "react-dom": "^19.2.3",
     "react-resizable-panels": "catalog:",
     "recharts": "catalog:",
-    "shiki": "^1.12.1",
+    "shiki": "^4.0.2",
     "sonner": "catalog:",
     "ts-morph": "^27.0.2",
     "tw-animate-css": "catalog:",
