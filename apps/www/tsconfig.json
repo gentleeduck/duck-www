@@ -5,6 +5,7 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "declaration": false,
+    "declarationMap": false,
     "emitDeclarationOnly": false,
     "composite": false,
     "jsx": "preserve",
