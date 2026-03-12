@@ -1,3 +1,4 @@
+// @ts-nocheck — MCP SDK types incompatible with Zod 4
 import { readdir, readFile, stat } from 'node:fs/promises'
 import { join, resolve, sep } from 'node:path'
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'

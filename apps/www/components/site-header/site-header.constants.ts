@@ -3,6 +3,8 @@ import type { MenuCard, MenuItem } from './site-header.types'
 
 const uiDocsBaseUrl = 'https://ui.gentleduck.org'
 const genDocsBaseUrl = 'https://gen.gentleduck.org'
+const uploadDocsBaseUrl = 'https://upload.gentleduck.org'
+const iamDocsBaseUrl = 'https://iam.gentleduck.org'
 
 export const productCard: MenuCard = {
   className: 'from-zinc-950 via-amber-900/50 to-amber-800/70 border-amber-500/40',
@@ -110,6 +112,18 @@ export const productItems: MenuItem[] = [
     external: true,
     href: `${genDocsBaseUrl}/docs/duck-query`,
     title: '@gentleduck/query',
+  },
+  {
+    description: 'Resumable, strategy-based file upload engine for the browser.',
+    external: true,
+    href: uploadDocsBaseUrl,
+    title: '@gentleduck/upload',
+  },
+  {
+    description: 'Modern ABAC/RBAC access control engine for TypeScript.',
+    external: true,
+    href: iamDocsBaseUrl,
+    title: '@gentleduck/iam',
   },
   {
     description: 'Documentation components and velite config for docs sites.',

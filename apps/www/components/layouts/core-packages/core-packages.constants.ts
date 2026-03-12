@@ -15,6 +15,7 @@ import {
   Table,
   Terminal,
   TestTube,
+  Upload,
   Workflow,
 } from 'lucide-react'
 
@@ -32,9 +33,17 @@ export const packages = [
   {
     description:
       'Type-safe RBAC + ABAC authorization engine for TypeScript with framework integrations and composable policy design.',
-    href: 'https://github.com/gentleeduck/duck-iam',
+    href: 'https://iam.gentleduck.org',
     icon: ShieldCheck,
     name: 'Gentleduck IAM',
+    status: 'new',
+  },
+  {
+    description:
+      'Resumable, strategy-based file upload engine for the browser with chunked multipart support and persistence.',
+    href: 'https://upload.gentleduck.org',
+    icon: Upload,
+    name: 'Gentleduck Upload',
     status: 'new',
   },
   {
