@@ -39,7 +39,7 @@
     "@gentleduck/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "catalog:",
     "@types/lodash.template": "^4.5.3",
-    "@types/node": "22.19.3",
+    "@types/node": "25.5.0",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "jotai": "^2.18.0",
