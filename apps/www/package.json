@@ -4,8 +4,8 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
-    "@gentleduck/docs": "0.2.7",
-    "@gentleduck/lazy": "^1.2.12",
+    "@gentleduck/docs": "0.2.8",
+    "@gentleduck/lazy": "^1.2.14",
     "@gentleduck/libs": "catalog:",
     "@gentleduck/motion": "catalog:",
     "@gentleduck/ui": "workspace:*",
