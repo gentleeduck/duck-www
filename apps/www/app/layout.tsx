@@ -277,6 +277,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `,
           }}
         />
+        {process.env.NODE_ENV === 'development' && (
+          <script crossOrigin="anonymous" src="//unpkg.com/react-grab/dist/index.global.js" />
+        )}
       </head>
       <body className={cn('duck min-h-svh bg-background antialiased')}>
         <KeyProvider timeoutMs={100}>
